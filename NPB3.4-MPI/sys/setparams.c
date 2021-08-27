@@ -32,6 +32,12 @@
  * 
  */
 
+/* Modified to reduce total iterations to speed up simulation
+ *
+ * Author: Xiaolong Huang (2021)
+ */
+
+
 #include <sys/types.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -687,8 +693,10 @@ void write_ft_info(FILE *fp, char class)
   if      (class == 'S') { nx = 64;   ny = 64;   nz = 64;   niter = 6;}
   else if (class == 'W') { nx = 128;  ny = 128;  nz = 32;   niter = 6;}
   else if (class == 'A') { nx = 256;  ny = 256;  nz = 128;  niter = 6;}
-  else if (class == 'B') { nx = 512;  ny = 256;  nz = 256;  niter =20;}
-  else if (class == 'C') { nx = 512;  ny = 512;  nz = 512;  niter =20;}
+//else if (class == 'B') { nx = 512;  ny = 256;  nz = 256;  niter =20;}
+//else if (class == 'C') { nx = 512;  ny = 512;  nz = 512;  niter =20;}
+  else if (class == 'B') { nx = 512;  ny = 256;  nz = 256;  niter =1 ;}
+  else if (class == 'C') { nx = 512;  ny = 512;  nz = 512;  niter =1 ;}
   else if (class == 'D') { nx = 2048; ny = 1024; nz = 1024; niter =25;}
   else if (class == 'E') { nx = 4096; ny = 2048; nz = 2048; niter =25;}
   else if (class == 'F') { nx = 8192; ny = 4096; nz = 4096; niter =25;}

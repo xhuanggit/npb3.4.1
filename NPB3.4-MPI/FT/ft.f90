@@ -68,6 +68,10 @@
 !---------------------------------------------------------------------
 
 !---------------------------------------------------------------------
+! Modified to reduce total iterations to speed up simulation
+!
+! Author: Xiaolong Huang (2021)
+!---------------------------------------------------------------------
 
 !---------------------------------------------------------------------
 ! FT benchmark
@@ -1839,13 +1843,15 @@
       else if (d1 .eq. 512 .and.  &
      &    d2 .eq. 256 .and.  &
      &    d3 .eq. 256 .and.  &
-     &    nt .eq. 20) then
+!    &    nt .eq. 20) then
+     &    nt .eq.  1) then
          class = 'B'
 
       else if (d1 .eq. 512 .and.  &
      &    d2 .eq. 512 .and.  &
      &    d3 .eq. 512 .and.  &
-     &    nt .eq. 20) then
+!    &    nt .eq. 20) then
+     &    nt .eq.  1) then
          class = 'C'
 
       else if (d1 .eq. 2048 .and.  &
